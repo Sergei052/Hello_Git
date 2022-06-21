@@ -97,3 +97,5 @@ elif operation == '/':
         print('На ноль делить нельзя')
 elif operation == 0:
     quit()
+
+
