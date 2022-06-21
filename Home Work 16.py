@@ -1,6 +1,6 @@
 # # Задача № 1. Написать функцию season, принимающую 1 аргумент — номер месяца (от 1 до 12),
-# # и возвращающую время года, которому этот месяц принадлежит (зима, весна, лето или осень).
-# # Номер месяца вводить с клавиатуры.
+# и возвращающую время года, которому этот месяц принадлежит (зима, весна, лето или осень).
+# Номер месяца вводить с клавиатуры.
 def season(mon):
     if 3 <= mon <= 5:
         print('Весна')
@@ -65,25 +65,35 @@ summa_func()
 # Ввод с клавиатуры: операции + - * / и два числа. Операции являются функциями.
 # Обработать ошибку: “Деление на ноль”
 # Ноль использовать в качестве завершения программы (сделать как отдельную операцию).
+def addition(f, s):
+    print(f + s)
 
 
-def calculator(f, s):
-    operation = input('Введите операцию(+, -, /, *): ')
-    if operation == '+':
-        print(f + s)
-    if operation == '-':
-        print(f - s)
-    if operation == '*':
-        print(f * s)
-    try:
-        if operation == '/':
-            print(f / s)
-    except ZeroDivisionError:
-        print('На ноль делить нельзя')
+def subtraction(f, s):
+    print(f - s)
+
+
+def multiplication(f, s):
+    print(f * s)
+
+
+def division(f, s):
+    print(f / s)
 
 
 first = int(input('Введите первое число: '))
 second = int(input('Введите второе число: '))
-
-
-calculator(first, second)
+operation = input('Введите операцию(+, -, /, *, "0" для выхода): ')
+if operation == '+':
+    addition(first, second)
+elif operation == '-':
+    subtraction(first, second)
+elif operation == '*':
+    multiplication(first, second)
+elif operation == '/':
+    try:
+        division(first, second)
+    except ZeroDivisionError:
+        print('На ноль делить нельзя')
+elif operation == 0:
+    quit()
