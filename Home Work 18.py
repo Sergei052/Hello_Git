@@ -1,3 +1,6 @@
+import re
+
+
 class HW:
     def __init__(self, data):
         self.data = data
@@ -9,11 +12,17 @@ class HW:
         c = ''
         suma = 0
 
+        if " " in self.data:
+            self.data = re.sub(r'[^\w]', '', self.data)
+
         if self.data.isalpha():
             for i in self.data:
                 if i in "aeoiuyауоеияюёэы":
                     vowels += 1
                     v += i
+                elif i == ' ':
+                    vowels += 0
+                    consonants += 0
                 else:
                     consonants += 1
                     c += i
