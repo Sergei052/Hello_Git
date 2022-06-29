@@ -20,9 +20,6 @@ class HW:
                 if i in "aeoiuyауоеияюёэы":
                     vowels += 1
                     v += i
-                elif i == ' ':
-                    vowels += 0
-                    consonants += 0
                 else:
                     consonants += 1
                     c += i
