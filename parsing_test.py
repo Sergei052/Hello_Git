@@ -21,4 +21,8 @@ with open("index.html") as file:
      src = file.read()
 
 soup = BeautifulSoup(src, "lxml")   # создал переменную в которую передал, в качестве параметров парсер lxml и переменную src
-
+all_products_hrefs = soup.find_all(class_="mzr-tc-group-item-href")  # в качестве параметра передал класс ссылок
+for i in all_products_hrefs:
+     i_text = i.text
+     i_href = i.get('href')
+     print(f"{i_text}: {i_href}")
